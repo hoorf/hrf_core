@@ -3,29 +3,10 @@ package com.hrf.utils.common;
 import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Map;
-public class ObjectUtils {
 
-	public static <T> T defalutValue(T source, T defalut) {
-		if (isEmpty(source)) {
-			return defalut;
-		} else {
-			return source;
-		}
-	}
+public class ObjectUtils extends org.apache.commons.lang3.ObjectUtils {
 
-	@SuppressWarnings("unchecked")
-	public static <T> T firstNoNull(T... objs) {
-		if (isNoEmpty(objs)) {
-			for (T obj : objs) {
-				if (isNoEmpty(obj)) {
-					return obj;
-				}
-			}
-		}
-		return null;
-
-	}
-
+	@SuppressWarnings("rawtypes")
 	public static boolean isEmpty(Object object) {
 		if (null == object)
 			return true;
